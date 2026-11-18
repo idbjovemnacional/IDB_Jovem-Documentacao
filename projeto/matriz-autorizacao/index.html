@@ -570,7 +570,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../guia_front_us10_us11_us14.md" class="md-nav__link">
+      <a href="../sprint04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_front_us10_us11_us14/" class="md-nav__link">
         
   
   
@@ -598,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../front_us10_us11_us14.md" class="md-nav__link">
+      <a href="../front_us10_us11_us14/" class="md-nav__link">
         
   
   
@@ -812,6 +840,17 @@
     <span class="md-ellipsis">
       
         Rotas novas da Sprint 3 — US10, US11 e US14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotas-novas-da-sprint-4-us21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotas novas da Sprint 4 — US21
       
     </span>
   </a>
@@ -1082,6 +1121,17 @@
     <span class="md-ellipsis">
       
         Rotas novas da Sprint 3 — US10, US11 e US14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotas-novas-da-sprint-4-us21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotas novas da Sprint 4 — US21
       
     </span>
   </a>
@@ -1423,6 +1473,51 @@ das próprias rotas da aplicação (<a href="https://github.com/gces-2026-2-grup
 </tbody>
 </table>
 <hr />
+<p><a name="sprint4"></a></p>
+<h2 id="rotas-novas-da-sprint-4-us21">Rotas novas da Sprint 4 — US21<a class="headerlink" href="#rotas-novas-da-sprint-4-us21" title="Permanent link">&para;</a></h2>
+<p>Registradas na <code>MATRIZ</code> de <code>tests/unit/test_matriz_rotas.py</code> e cobertas por
+testes de acesso permitido e negado em <code>tests/unit/test_autorizacao_setores.py</code>
+(<a href="https://github.com/gces-2026-2-grupo-6/IDB_Jovem-Backend/pull/21">PR #21</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Rota</th>
+<th>Método</th>
+<th>Exigência</th>
+<th>Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pedido</td>
+<td><code>/pedido/</code></td>
+<td>GET</td>
+<td>Setor de produtos</td>
+<td>US21 (CA1): a lista traz nome e contato de quem pediu</td>
+</tr>
+<tr>
+<td>Pedido</td>
+<td><code>/pedido/{pedido_id}/status</code></td>
+<td>PATCH</td>
+<td>Setor de produtos</td>
+<td>US21 (CA2): mudar a situação é acompanhamento, não exclusão</td>
+</tr>
+<tr>
+<td>Formulário</td>
+<td><code>/formulario/produtos/{produto_id}/pedidos</code></td>
+<td>GET</td>
+<td>Setor de produtos</td>
+<td>US21: sincroniza as respostas do formulário do produto e grava os pedidos</td>
+</tr>
+</tbody>
+</table>
+<p>O "setor de produtos" libera <code>admin-produtos</code> e <code>superadmin</code>. A US21 pede o
+setor <strong>Comercial</strong>, mas o papel não existe no Keycloak, porque a revisão da
+US03 (CA2 e CA3) ainda não foi implementada. As rotas reaproveitam o setor
+atual em vez de criar um papel novo. A exclusão de produto continua exigindo
+<code>superadmin</code> e passou a responder 409 quando o produto tem pedidos.</p>
+<hr />
 <h2 id="historico-de-versao">Histórico de Versão<a class="headerlink" href="#historico-de-versao" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1444,6 +1539,12 @@ das próprias rotas da aplicação (<a href="https://github.com/gces-2026-2-grup
 <td><code>1.1</code></td>
 <td>26/10/2026</td>
 <td>Registro das rotas novas da Sprint 3 (US10, US11 e US14)</td>
+<td><a href="https://github.com/JuliaReis18">Júlia dos Reis Teixeira Massuda</a>, <a href="https://github.com/Filipe-002">Filipe Carvalho da Silva</a> e <a href="https://github.com/JpRodrigues2">João Rodrigues</a></td>
+</tr>
+<tr>
+<td><code>1.2</code></td>
+<td>17/11/2026</td>
+<td>Registro das rotas novas da Sprint 4 (US21)</td>
 <td><a href="https://github.com/JuliaReis18">Júlia dos Reis Teixeira Massuda</a>, <a href="https://github.com/Filipe-002">Filipe Carvalho da Silva</a> e <a href="https://github.com/JpRodrigues2">João Rodrigues</a></td>
 </tr>
 </tbody>
